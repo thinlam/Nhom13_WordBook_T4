@@ -1,27 +1,31 @@
 // src/pages/register.tsx
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';  // Sử dụng useNavigate thay vì useHistory
+import { useNavigate } from 'react-router-dom';
 
 const Register: React.FC = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const navigate = useNavigate();  // Khai báo useNavigate
+  const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
+      // Gửi yêu cầu đăng ký
       const response = await axios.post('http://localhost:5000/api/auth/register', {
         username,
         email,
         password,
       });
+      // Lưu token vào localStorage và chuyển hướng đến dashboard
       localStorage.setItem('token', response.data.token);
-      navigate('/dashboard');  // Dùng navigate để chuyển hướng
+      navigate('/dashboard');
     } catch (err) {
-      setError('Đăng ký thất bại, vui lòng thử lại!');
+      // Sử dụng biến err để log lỗi (hoặc hiển thị thông báo lỗi)
+      console.error(err);  // In lỗi ra console (có thể thêm thông tin chi tiết nếu cần)
+      setError('Đăng ký thất bại, vui lòng thử lại!');  // Cập nhật thông báo lỗi
     }
   };
 
