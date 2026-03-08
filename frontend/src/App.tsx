@@ -1,35 +1,70 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// src/App.tsx
+
+import { useState } from 'react';
+import './App.css';  // Đảm bảo rằng CSS đã được cập nhật
 
 function App() {
-  const [count, setCount] = useState(0)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [transactions, setTransactions] = useState<any[]>([]);
+  const [description, setDescription] = useState('');
+  const [amount, setAmount] = useState<number | string>('');
+  const [totalAmount, setTotalAmount] = useState(0);
+
+  // Hàm thêm giao dịch
+  const addTransaction = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!description || !amount) {
+      alert('Vui lòng nhập đầy đủ thông tin.');
+      return;
+    }
+    const newTransaction = { description, amount: parseFloat(amount as string) };
+    setTransactions([...transactions, newTransaction]);
+    setTotalAmount((prev) => prev + newTransaction.amount);
+    setDescription('');
+    setAmount('');
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="App">
+      <h1>Quản lý giao dịch</h1>
+      
+      {/* Form thêm giao dịch */}
+      <form onSubmit={addTransaction}>
+        <input
+          type="text"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+          placeholder="Nhập mô tả giao dịch"
+          required
+        />
+        <input
+          type="number"
+          value={amount}
+          onChange={(e) => setAmount(e.target.value)}
+          placeholder="Nhập số tiền"
+          required
+        />
+        <button type="submit">Thêm giao dịch</button>
+      </form>
+      
+      {/* Danh sách giao dịch */}
+      <div className="transaction-list">
+        <h3>Danh sách giao dịch</h3>
+        <ul>
+          {transactions.map((transaction, index) => (
+            <li key={index}>
+              {transaction.description}: {transaction.amount} VND
+            </li>
+          ))}
+        </ul>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+      
+      {/* Tổng số tiền */}
+      <div className="total-amount">
+        <strong>Tổng số tiền: </strong>{totalAmount} VND
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;
