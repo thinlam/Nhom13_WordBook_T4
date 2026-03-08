@@ -1,0 +1,105 @@
+.wallet-container{
+display:flex;
+background:#0d1326;
+color:white;
+height:100vh;
+font-family:Arial;
+}
+
+/* sidebar */
+
+.sidebar{
+width:220px;
+background:#0b1020;
+padding:25px;
+}
+
+.sidebar h2{
+margin-bottom:30px;
+}
+
+.sidebar ul{
+list-style:none;
+padding:0;
+}
+
+.sidebar li{
+padding:12px;
+border-radius:8px;
+margin-bottom:10px;
+cursor:pointer;
+}
+
+.sidebar li:hover{
+background:#1a2245;
+}
+
+.active{
+background:#2d46ff;
+}
+
+/* main */
+
+.main{
+flex:1;
+padding:40px;
+}
+
+.header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.btn-add{
+background:#3a5bff;
+border:none;
+padding:10px 20px;
+border-radius:8px;
+color:white;
+cursor:pointer;
+}
+
+.total{
+margin-top:30px;
+margin-bottom:30px;
+}
+
+.total h2{
+font-size:36px;
+}
+
+/* wallet cards */
+
+.wallet-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.wallet-card{
+background:#151c36;
+padding:20px;
+border-radius:14px;
+transition:0.2s;
+}
+
+.wallet-card:hover{
+transform:translateY(-3px);
+border:1px solid #3a5bff;
+}
+
+.wallet-card h2{
+margin:10px 0;
+}
+
+.wallet-add{
+border:2px dashed #3a5bff;
+border-radius:14px;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+font-size:30px;
+cursor:pointer;
+}
