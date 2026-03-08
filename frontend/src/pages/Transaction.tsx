@@ -13,14 +13,26 @@ const Transaction = () => {
   // Hàm thêm giao dịch
   const addTransaction = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Kiểm tra nếu mô tả hoặc số tiền trống
     if (!description || !amount) {
       alert('Vui lòng nhập đầy đủ thông tin.');
       return;
     }
+
     const newAmount = parseFloat(amount as string);
+
+    // Kiểm tra nếu số tiền âm
+    if (newAmount <= 0) {
+      alert('Số tiền phải lớn hơn 0');
+      return;
+    }
+
     const newTransaction = { description, amount: newAmount };
     setTransactions([...transactions, newTransaction]);
     setTotalAmount((prev) => prev + newAmount);
+
+    // Reset các giá trị sau khi thêm giao dịch
     setDescription('');
     setAmount('');
   };
