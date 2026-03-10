@@ -19,6 +19,7 @@ const userSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+
 export type UserDoc = InferSchemaType<typeof userSchema> & mongoose.Document;
 // Quan trọng: model "User" -> collection mặc định "users"
 export const UserModel = mongoose.model("User", userSchema);
