@@ -63,7 +63,7 @@ const Transaction = () => {
             onChange={(e) => setAmount(e.target.value)}
             placeholder="Số tiền"
             required
-          />
+          />  
         </div>
         <button type="submit" className="btn-add">
           <i className="fas fa-plus-circle"></i> Thêm
