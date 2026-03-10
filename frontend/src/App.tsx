@@ -1,3 +1,8 @@
+import './App.css';
+import Transaction from './pages/Transaction';
+
+function App() {
+  return <Transaction />;
 // src/App.tsx
 import { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Import React Router
