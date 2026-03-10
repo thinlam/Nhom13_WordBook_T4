@@ -1,3 +1,6 @@
+/* src/App.css */
+
+/* Định dạng chung cho root */
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -5,19 +8,24 @@
   text-align: center;
 }
 
+/* Định dạng cho logo */
 .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
 }
+
+/* Hiệu ứng hover cho logo */
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+/* Hiệu ứng xoay cho logo */
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -33,10 +41,30 @@
   }
 }
 
+/* Định dạng thẻ card */
 .card {
   padding: 2em;
 }
 
+/* Định dạng cho phần đọc tài liệu */
 .read-the-docs {
   color: #888;
+}
+
+/* Định dạng cho danh mục */
+.category-list {
+  margin: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.category-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.category-list li {
+  padding: 5px;
+  border-bottom: 1px solid #ddd;
 }

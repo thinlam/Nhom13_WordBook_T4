@@ -1,48 +1,3 @@
-<<<<<<< HEAD
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import Login from "./pages/Login";
-
-function HomePage() {
-  const user = localStorage.getItem("user");
-  const parsedUser = user ? JSON.parse(user) : null;
-
-  return (
-    <div style={{ padding: "40px", fontFamily: "Arial, sans-serif" }}>
-      <h1>Trang chủ</h1>
-      <p>Đăng nhập thành công.</p>
-      {parsedUser && (
-        <>
-          <p>Tên: {parsedUser.name}</p>
-          <p>Email: {parsedUser.email}</p>
-        </>
-      )}
-    </div>
-  );
-}
-
-function PrivateRoute({ children }: { children: React.ReactNode }) {
-  const token = localStorage.getItem("token");
-  return token ? <>{children}</> : <Navigate to="/login" replace />;
-}
-
-export default function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route
-          path="/"
-          element={
-            <PrivateRoute>
-              <HomePage />
-            </PrivateRoute>
-          }
-        />
-      </Routes>
-    </BrowserRouter>
-  );
-}
-=======
 // src/App.tsx
 import { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Import React Router
@@ -80,6 +35,16 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
 
+      {/* Giao diện danh mục */}
+      <div className="category-list">
+        <h2>Danh Mục</h2>
+        <ul>
+          {categories.map((category) => (
+            <li key={category.id}>{category.name}</li>
+          ))}
+        </ul>
+      </div>
+    </>
       {/* Định tuyến giữa các trang */}
       <Routes>
         {/* Route cho trang đăng ký */}
@@ -90,4 +55,4 @@ function App() {
 }
 
 export default App;
->>>>>>> origin/Develop
+
