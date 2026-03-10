@@ -1,3 +1,11 @@
+import ForgotPasswordPage from "./pages/ForgotPasswordPage";
+import "./App.css";
+
+function App() {
+  return (
+    <div>
+      <ForgotPasswordPage />
+    </div>
 // src/App.tsx
 import { useState } from 'react';
 import reactLogo from './assets/react.svg';
