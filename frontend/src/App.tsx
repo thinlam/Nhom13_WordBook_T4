@@ -1,3 +1,9 @@
+import './App.css'
+import Wallet from "./pages/wallet";
+
+function App() {
+  return (
+    <Wallet />
 import './App.css';
 import Transaction from './pages/Transaction';
 
