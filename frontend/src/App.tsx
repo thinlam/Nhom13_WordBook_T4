@@ -1,3 +1,18 @@
+// src/App.tsx
+import { useState } from 'react';
+import reactLogo from './assets/react.svg';
+import viteLogo from '/vite.svg';
+import './App.css';
+
+function App() {
+  const [count, setCount] = useState(0);
+
+  // Dữ liệu mẫu cho danh mục
+  const categories = [
+    { id: 1, name: 'Danh mục 1' },
+    { id: 2, name: 'Danh mục 2' },
+    { id: 3, name: 'Danh mục 3' }
+  ];
 import './App.css'
 import Wallet from "./pages/wallet";
 
@@ -46,6 +61,16 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
 
+      {/* Giao diện danh mục */}
+      <div className="category-list">
+        <h2>Danh Mục</h2>
+        <ul>
+          {categories.map((category) => (
+            <li key={category.id}>{category.name}</li>
+          ))}
+        </ul>
+      </div>
+    </>
       {/* Định tuyến giữa các trang */}
       <Routes>
         {/* Route cho trang đăng ký */}
