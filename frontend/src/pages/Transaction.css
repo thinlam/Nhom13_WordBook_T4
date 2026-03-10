@@ -1,0 +1,208 @@
+/* src/components/Transaction.css */
+
+* {
+  box-sizing: border-box;
+}
+
+.transaction-container {
+  width: 90%;
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 28px 24px;
+  background-color: #ffffff;
+  border-radius: 28px;
+  box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.transaction-container h2 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.transaction-container h2 i {
+  color: #3b82f6;
+  font-size: 2rem;
+}
+
+/* Form */
+.transaction-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.input-group {
+  flex: 1 1 200px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-group i {
+  position: absolute;
+  left: 16px;
+  color: #94a3b8;
+  font-size: 1.1rem;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 14px 16px 14px 48px;
+  border: 2px solid #e2e8f0;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  background-color: #f8fafc;
+  transition: all 0.2s;
+  outline: none;
+}
+
+.input-group input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+  background-color: #ffffff;
+}
+
+.btn-add {
+  padding: 14px 28px;
+  background: linear-gradient(145deg, #3b82f6, #2563eb);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 8px 16px -5px #3b82f6;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.btn-add:hover {
+  background: linear-gradient(145deg, #2563eb, #1d4ed8);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 20px -6px #2563eb;
+}
+
+/* Danh sách giao dịch */
+.transaction-list {
+  background: #f8fafc;
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.transaction-list h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 18px;
+  font-size: 1.3rem;
+}
+
+.transaction-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.transaction-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  background-color: white;
+  border-radius: 16px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+  border: 1px solid #eef2f6;
+  transition: all 0.2s;
+}
+
+.transaction-list li:hover {
+  box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+  border-color: #b1d0ff;
+}
+
+.transaction-desc {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.transaction-desc i {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.transaction-amount {
+  font-weight: 700;
+  color: #2563eb;
+  background: #eef2ff;
+  padding: 5px 16px;
+  border-radius: 40px;
+  font-size: 0.95rem;
+}
+
+/* Tổng tiền */
+.total-amount {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
+  background: linear-gradient(145deg, #f1f5f9, #ffffff);
+  border-radius: 60px;
+  border: 2px dashed #cbd5e1;
+  font-size: 1.2rem;
+}
+
+.total-amount strong {
+  color: #334155;
+  font-weight: 700;
+}
+
+.total-amount span {
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: linear-gradient(145deg, #2563eb, #1e40af);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .transaction-container {
+    padding: 20px;
+  }
+
+  .transaction-form {
+    flex-direction: column;
+  }
+
+  .btn-add {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .total-amount {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .total-amount span {
+    font-size: 1.5rem;
+  }
+}
