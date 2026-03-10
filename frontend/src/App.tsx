@@ -35,6 +35,16 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
 
+      {/* Giao diện danh mục */}
+      <div className="category-list">
+        <h2>Danh Mục</h2>
+        <ul>
+          {categories.map((category) => (
+            <li key={category.id}>{category.name}</li>
+          ))}
+        </ul>
+      </div>
+    </>
       {/* Định tuyến giữa các trang */}
       <Routes>
         {/* Route cho trang đăng ký */}
@@ -45,3 +55,4 @@ function App() {
 }
 
 export default App;
+
