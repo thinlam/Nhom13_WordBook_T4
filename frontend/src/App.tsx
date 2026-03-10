@@ -1,37 +1,3 @@
-import ForgotPasswordPage from "./pages/ForgotPasswordPage";
-import "./App.css";
-
-function App() {
-  return (
-    <div>
-      <ForgotPasswordPage />
-    </div>
-// src/App.tsx
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
-
-function App() {
-  const [count, setCount] = useState(0);
-
-  // Dữ liệu mẫu cho danh mục
-  const categories = [
-    { id: 1, name: 'Danh mục 1' },
-    { id: 2, name: 'Danh mục 2' },
-    { id: 3, name: 'Danh mục 3' }
-  ];
-import './App.css'
-import Wallet from "./pages/wallet";
-
-function App() {
-  return (
-    <Wallet />
-import './App.css';
-import Transaction from './pages/Transaction';
-
-function App() {
-  return <Transaction />;
 // src/App.tsx
 import { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Import React Router
@@ -89,3 +55,4 @@ function App() {
 }
 
 export default App;
+
